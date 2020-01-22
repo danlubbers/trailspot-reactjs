@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.scss';
 import { UserLocation } from './Components/UserLocation/UserLocation.jsx';
+import { UserInput } from './Components/UserInput/UserInput';
 
 import trailSpot from './assets/images/trailspot.png';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +13,13 @@ function App() {
       </header>
 
       <div>
-        <UserLocation />
+        
+          <UserLocation />
+
+        {!props.isLoading &&
+          <UserInput props={props.isLoading}/>
+        }
+
       </div>
       
     </div>

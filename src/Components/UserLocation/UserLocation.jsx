@@ -45,7 +45,7 @@ export const UserLocation = () => {
 
       const trailsAPI = await axios.get(`${cors}https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}&maxDistance=10&key=${apiTrailsKey}`);
       setTrailsData(trailsAPI.data.trails);
-      console.log(trailsAPI.data.trails);
+      // console.log(trailsAPI.data.trails);
       
       // STATIC TESTING for Boulder, CO
       // const trailsAPI = await axios.get(`${cors}https://www.hikingproject.com/data/get-trails?lat=40.0150&lon=-105.2705&maxDistance=10&key=${apiTrailsKey}`);
@@ -64,7 +64,7 @@ export const UserLocation = () => {
     // console.log(trailsData);
     console.log(weatherIcon);
     // console.log(userLocation.city);
-  });
+  }, [weatherIcon]);
   
   // Weather Variable Data
   const fahrenheit = Math.floor(((userWeatherMain.temp - 273.15) * 1.8) + 32);
