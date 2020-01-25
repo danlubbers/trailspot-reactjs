@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { UserLocation } from './Components/UserLocation/UserLocation.jsx';
-// import { UserInput } from './Components/UserInput/UserInput';
+import { UserInput } from './Components/UserInput/UserInput';
 
 import trailSpot from './assets/images/trailspot.png';
 
@@ -17,7 +17,7 @@ function App() {
 
       <UserLocation />
         
-      {/* <UserInput/> */}
+      <UserInput/>
         
 
       </div>
