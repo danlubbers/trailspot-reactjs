@@ -79,6 +79,27 @@ export const UserInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log('FORM: ', e.target.elements)
+    const elements = [...e.target.elements].filter(e => {
+      return e.matches('input')
+    });
+
+    let isValid = true;
+    elements.forEach(e => {
+      if (e.value) {
+        e.className.replace('error', '');
+      } else {
+        isValid = false;
+        e.className += " error";
+      }
+    })
+
+    if(!isValid) return;
+
+    console.log(elements);
+    
+
     getUserInput();
   }
   
@@ -101,11 +122,11 @@ export const UserInput = () => {
 
   return (
     <>
-      <form className='search-container' onSubmit={handleSubmit}>
+      <form action='POST' className='search-container' onSubmit={handleSubmit}>
         <h2>Search for an area by city & state: </h2>
         <input className='city-search' type="text" placeholder='Ex. Grand Canyon' value={cityInput.value} onChange={handleCityChange}/>
         <input className='state-search' type="text" placeholder='Ex. AZ' value={stateInput.value} onChange={handleStateChange}/>
-        <input type="submit" className='userSearchInput button' value='Search'/>
+        <button type="submit" className='userSearchInput button' value='Search'>Search</button>
       </form>
       
       {isLoading &&

@@ -34,7 +34,11 @@ $font: roboto;
     font-size: 1rem;
   }
 
-  .button {
+  .error {
+    border: 1px solid red;
+  }
+
+  button {
     height: 30px;
     margin: 0 10px;
     border: none;
@@ -42,7 +46,7 @@ $font: roboto;
     background-color: rgb(255, 255, 255);
   }
 
-  .button:hover {
+  button:hover {
     background-color: rgb(245, 245, 245);  
   }
 }

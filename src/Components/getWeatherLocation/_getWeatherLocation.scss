@@ -1,0 +1,50 @@
+// variables
+$font: roboto;
+
+.weather-container {
+  width: 350px;
+  margin: 25px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 1.5px solid #777;
+  border-radius: 15px;
+  
+  .text {
+    font-size: 1.1em;
+    font-family: $font;
+  }
+
+  .description {
+    margin: -10px 0 20px 0;
+  }
+
+  .degrees {
+    font-size: 1.9em;
+  }
+
+  .pressure-humidity-container {
+    margin: 15px 0;
+
+    .pressure, .humidity {
+      margin: 0 15px;
+      font-size: 1em;
+    }
+
+    button {
+      margin: 0 30px;
+      width: 4rem;
+      height: 1.5rem;
+      border-radius: 7px;
+      background-color: rgb(255, 255, 255);
+    }
+  
+    button:hover {
+      // 20% darker than the original color
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}
