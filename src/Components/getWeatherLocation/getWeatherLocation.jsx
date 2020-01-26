@@ -26,7 +26,7 @@ export const GetWeatherLocation = (props) => {
   return (
     <div>
 
-      {props.isLoading && 
+     
         <div className='weather-container'>
           <h1 className='text'>Current Weather Conditions</h1>
           <img className='weather-icon' src={icon} alt='weather icon'/>
@@ -42,13 +42,12 @@ export const GetWeatherLocation = (props) => {
             <button onClick={toggleDegrees}>F / C</button>
           </div>
         </div>
-      }
+      
     </div>
   )
 }
 
 GetWeatherLocation.propTypes = {
-  isLoading: propTypes.bool,
   userWeather: propTypes.object,
   userWeatherMain: propTypes.object,
   userWeatherIcon: propTypes.string

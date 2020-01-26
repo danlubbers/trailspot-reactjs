@@ -22,6 +22,13 @@ export const LocationTest = () => {
   const weatherAPI = config.WEATHER_API;
   const apiTrailsKey = config.API_KEY_REI;
 
+  // Capitalize every first letter
+  const cityInputCaps = cityInput.split(' ').map(word => {
+    return word.slice(0, 1).toUpperCase() + word.slice(1);
+  }).join(' ');
+  // Capitalize state abbreviation
+  const stateInputCaps = stateInput.toUpperCase();
+
 
   const getLocationData = async () => {
     
@@ -33,11 +40,13 @@ export const LocationTest = () => {
       const long = res.data.longitude;
       setUserLocation(res.data)
       
+      // Weather
       const weather = await axios.get(`${cors}http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${weatherAPI}`);
       setUserWeatherMain(weather.data.main);
       setUserWeather(weather.data.weather[0]);
       setWeatherIcon(weather.data.weather[0].icon);
   
+      // Trails
       const trailsAPI = await axios.get(`${cors}https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}&maxDistance=10&key=${apiTrailsKey}`);
       setTrailsData(trailsAPI.data.trails);
 
@@ -60,7 +69,7 @@ export const LocationTest = () => {
     setStateInput(e.target.value)
   }
 
-  // *** USER INPUT FORM
+  //  USER INPUT FORM
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -112,6 +121,15 @@ export const LocationTest = () => {
       }
     }
     )();
+    // Clears input fields
+    e.target.reset();
+  }
+
+  // Clear Results
+  const clearResults = () => {
+    setIsLoading(false);
+    setCityInput('')
+    setStateInput('')
   }
 
   useEffect(() => {
@@ -135,17 +153,21 @@ export const LocationTest = () => {
         <button type="submit" className='userSearchInput button' value='Search'>Search</button>
       </form>
       
+      <div className='clear-button-container'>
+        <button className='clear-button' onClick={clearResults}>CLEAR RESULTS</button>
+      </div>
+
       {isLoading &&
         <div id='location-results-container' className='location-results-container'>
           <div id='area-container' className='area-container'>
             <h2>We have found trails around the area of:</h2>
               <div className="city-state">
-                <h2 className='city-text-location'>{userLocation.city ? userLocation.city : cityInput}</h2> 
-                <h2 className='region-text-location'>{userLocation.region ? userLocation.region : stateInput}</h2>
+                <h2 className='city-text-location'>{userLocation.city ? userLocation.city : cityInputCaps}</h2> 
+                <h2 className='region-text-location'>{userLocation.region ? userLocation.region : stateInputCaps}</h2>
               </div>
           </div> 
 
-          <GetWeatherLocation isLoading={isLoading} userWeather={userWeather} userWeatherMain={userWeatherMain}  weatherIcon={weatherIcon}/>
+          <GetWeatherLocation userWeather={userWeather} userWeatherMain={userWeatherMain}  weatherIcon={weatherIcon}/>
     
           <TrailsData trailsData={trailsData}/>
         </div>

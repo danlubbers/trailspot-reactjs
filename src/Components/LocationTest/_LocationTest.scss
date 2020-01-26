@@ -51,6 +51,23 @@ $font: roboto;
   }
 }
 
+.clear-button-container {
+  margin: 20px 0;
+  width: 100%;
+
+  .clear-button {
+    height: 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+  .clear-button:hover {
+    background-color: rgb(245, 245, 245);  
+  }
+}
+
+
 .location-results-container {
   width: 100%;
   flex-direction: column;

@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './_TrailsData.scss';
 
 export const TrailsData = (props) => {
@@ -35,4 +36,7 @@ export const TrailsData = (props) => {
       })}
     </>
   )
+}
+TrailsData.propTypes = {
+  trailsData: propTypes.array,
 }
