@@ -3,6 +3,7 @@ import './_UserLocation.scss';
 import axios from 'axios';
 import config from '../../config';
 import { GetWeatherLocation } from '../getWeatherLocation/getWeatherLocation';
+import { TrailsData } from '../TrailsData/TrailsData';
 
 export const UserLocation = () => {
   const [userWeatherMain, setUserWeatherMain] = useState({});
@@ -85,34 +86,8 @@ export const UserLocation = () => {
 
       <GetWeatherLocation isLoading={isLoading} userWeather={userWeather} userWeatherMain={userWeatherMain}  weatherIcon={weatherIcon}/>
 
-      {trailsData.map((e, i) => {
+      <TrailsData trailsData={trailsData}/>
 
-        return (
-          <div key={++i} className='trail-results-container'>
-
-            <div className='trail-name-location-container'>
-              <h2 className='text name'>{e.name}</h2>
-              <h3 className='text location'>{e.location}</h3>
-              <h4 className='text summary'>{e.summary}</h4>
-
-              <div className='trail-details-container'>
-                <h4><strong>Trail Length:</strong> {e.length}mi</h4>
-                <h4><strong>Max Elevation:</strong> {e.high}ft</h4>
-                <h4><strong>Min Elevation:</strong> {e.low}ft</h4>
-                <h4><strong>Trail Conditions:</strong> {e.conditionStatus}</h4>
-                <h4><strong>Conditions Details:</strong> {e.conditionDetails}</h4>
-                <h4><strong>Last Date Conditions were updated:</strong> {e.conditionDate}</h4>
-              </div>
-
-              <div>
-                <img className='trail-image' src={e.imgSmallMed} alt={e.name}/>
-              </div>
-              <div className='horizontal-line'></div>
-              </div>
-
-          </div>
-        )
-      })}
     </>
   )
 };

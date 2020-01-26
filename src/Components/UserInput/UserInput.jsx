@@ -3,6 +3,7 @@ import './_UserInput.scss';
 import axios from 'axios';
 import config from '../../config';
 import { GetWeatherLocation } from '../getWeatherLocation/getWeatherLocation';
+import { TrailsData } from '../TrailsData/TrailsData';
 
 export const UserInput = () => {
   const [cityInput, setCityInput] = useState('');
@@ -10,7 +11,6 @@ export const UserInput = () => {
   const [userWeatherMain, setUserWeatherMain] = useState({});
   const [userWeather, setUserWeather] = useState({});
   const [weatherIcon, setWeatherIcon] = useState({});
-  const [userLocation, setUserLocation] = useState([]);
   const [trailsData, setTrailsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -86,7 +86,11 @@ export const UserInput = () => {
     let isValid = true;
     elements.forEach(e => {
       if (e.value) {
-        e.className.replace('error', '');
+        console.log('ERROR: ', e.className)
+        console.log(/error/gi.test(e.className));
+        console.log(typeof e.className);
+        // Figure out logic to get rid of error class, below does not work
+          e.className.replace('error', ' ');
       } else {
         isValid = false;
         e.className += " error";
@@ -115,8 +119,8 @@ export const UserInput = () => {
           <div id='area-container' className='area-container'>
             <h2>We have found trails around the area of:</h2>
               <div className="city-state">
-                <h2 className='city-text-location'>{userLocation.city}</h2> 
-                <h2 className='region-text-location'>{userLocation.region}</h2>
+                <h2 className='city-text-location'>{cityInput}</h2> 
+                <h2 className='region-text-location'>{stateInput}</h2>
               </div>
           </div> 
         </div>
@@ -124,34 +128,8 @@ export const UserInput = () => {
 
       <GetWeatherLocation isLoading={isLoading} userWeatherMain={userWeatherMain} userWeather={userWeather} weatherIcon={weatherIcon}/>
 
-      {trailsData.map((e, i) => {
-
-        return (
-          <div key={++i} className='trail-results-container'>
-
-            <div className='trail-name-location-container'>
-              <h2 className='text name'>{e.name}</h2>
-              <h3 className='text location'>{e.location}</h3>
-              <h4 className='text summary'>{e.summary}</h4>
-
-              <div className='trail-details-container'>
-                <h4><strong>Trail Length:</strong> {e.length}mi</h4>
-                <h4><strong>Max Elevation:</strong> {e.high}ft</h4>
-                <h4><strong>Min Elevation:</strong> {e.low}ft</h4>
-                <h4><strong>Trail Conditions:</strong> {e.conditionStatus}</h4>
-                <h4><strong>Conditions Details:</strong> {e.conditionDetails}</h4>
-                <h4><strong>Last Date Conditions were updated:</strong> {e.conditionDate}</h4>
-              </div>
-
-              <div>
-                <img className='trail-image' src={e.imgSmallMed} alt={e.name}/>
-              </div>
-              <div className='horizontal-line'></div>
-              </div>
-
-          </div>
-        )
-      })}
+      <TrailsData trailsData={trailsData}/>
+      
     </>
   )
 };
