@@ -83,7 +83,7 @@ export const UserLocation = () => {
         </div>
       }
 
-      <GetWeatherLocation isLoading={isLoading} userWeatherMain={userWeatherMain} userWeather={userWeather} weatherIcon={weatherIcon}/>
+      <GetWeatherLocation isLoading={isLoading} userWeather={userWeather} userWeatherMain={userWeatherMain}  weatherIcon={weatherIcon}/>
 
       {trailsData.map((e, i) => {
 

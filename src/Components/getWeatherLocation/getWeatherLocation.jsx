@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import './_getWeatherLocation.scss';
 
 export const GetWeatherLocation = (props) => {
@@ -44,4 +45,11 @@ export const GetWeatherLocation = (props) => {
       }
     </div>
   )
+}
+
+GetWeatherLocation.propTypes = {
+  isLoading: propTypes.bool,
+  userWeather: propTypes.object,
+  userWeatherMain: propTypes.object,
+  userWeatherIcon: propTypes.string
 }
