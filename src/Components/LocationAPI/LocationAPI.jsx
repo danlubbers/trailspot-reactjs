@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './_LocationTest.scss';
+import './_LocationAPI.scss';
 import axios from 'axios';
 import config from '../../config';
 import { GetWeatherLocation } from '../getWeatherLocation/getWeatherLocation';
 import { TrailsData } from '../TrailsData/TrailsData';
 
-export const LocationTest = () => {
+export const LocationAPI = () => {
   const [cityInput, setCityInput] = useState('');
   const [stateInput, setStateInput] = useState('');
   const [userWeatherMain, setUserWeatherMain] = useState({});
@@ -34,19 +34,19 @@ export const LocationTest = () => {
     
     try {
 
-      // IP Location:
+      // IP Location API:
       const res = await axios.get(`https://ipapi.co/json/`); 
       const lat = res.data.latitude;
       const long = res.data.longitude;
       setUserLocation(res.data)
       
-      // Weather
+      // Weather API
       const weather = await axios.get(`${cors}http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${weatherAPI}`);
       setUserWeatherMain(weather.data.main);
       setUserWeather(weather.data.weather[0]);
       setWeatherIcon(weather.data.weather[0].icon);
   
-      // Trails
+      // Trails API
       const trailsAPI = await axios.get(`${cors}https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}&maxDistance=10&key=${apiTrailsKey}`);
       setTrailsData(trailsAPI.data.trails);
 
@@ -98,6 +98,7 @@ export const LocationTest = () => {
     
       try {  
 
+        // OpenCage API for CITY/State to Lat/Long
         const userInput = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${cityInput}%20${stateInput}&key=${apiOpenCageKey}`);
         const lat = userInput.data.results[0].geometry.lat;
         const long = userInput.data.results[0].geometry.lng;

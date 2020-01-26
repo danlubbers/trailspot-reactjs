@@ -1,11 +1,7 @@
 import React from 'react';
 import './App.scss';
-// import { UserLocation } from './Components/UserLocation/UserLocation.jsx';
-// import { UserInput } from './Components/UserInput/UserInput';
-import { LocationTest } from './Components/LocationTest/LocationTest';
-
-
 import trailSpot from './assets/images/trailspot.png';
+import { LocationAPI } from './Components/LocationAPI/LocationAPI';
 
 function App() {
 
@@ -16,13 +12,7 @@ function App() {
       </header>
 
       <div>
-
-    <LocationTest />
-      {/* <UserLocation />
-        
-      <UserInput/> */}
-        
-
+        <LocationAPI />
       </div>
       
     </div>
