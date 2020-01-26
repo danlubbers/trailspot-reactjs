@@ -1,6 +1,3 @@
-// variables
-$font: roboto;
-
 .search-container {
   width: 100%;
   margin: 25px 0;
@@ -43,11 +40,11 @@ $font: roboto;
     margin: 0 10px;
     border: none;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: $button;
   }
 
   button:hover {
-    background-color: rgb(245, 245, 245);  
+    background-color: $button-hover;  
   }
 }
 
@@ -60,10 +57,10 @@ $font: roboto;
     margin: 0 10px;
     border: none;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: $button;
   }
   .clear-button:hover {
-    background-color: rgb(245, 245, 245);  
+    background-color: $button-hover;  
   }
 }
 
@@ -131,12 +128,12 @@ $font: roboto;
       width: 4rem;
       height: 1.5rem;
       border-radius: 7px;
-      background-color: rgb(255, 255, 255);
+      background-color: $button;
     }
   
     button:hover {
       // 20% darker than the original color
-      background-color: rgb(245, 245, 245);
+      background-color: $button-hover;
     }
   }
 }

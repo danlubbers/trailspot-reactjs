@@ -1,9 +1,5 @@
-// variables
-$font: roboto;
-
 .trail-results-container {
   width: 100%;
-  // margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +10,6 @@ $font: roboto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: yellow;
 
     .text {
       margin: 5px 0;

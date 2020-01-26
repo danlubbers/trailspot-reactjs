@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
-import './_getWeatherLocation.scss';
 
 export const GetWeatherLocation = (props) => {
   const [toggleStateDegrees, setToggleStateDegrees] = useState(false);

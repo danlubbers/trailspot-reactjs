@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './_LocationAPI.scss';
 import axios from 'axios';
 import config from '../../config';
 import { GetWeatherLocation } from '../getWeatherLocation/getWeatherLocation';
@@ -81,14 +80,10 @@ export const LocationAPI = () => {
     let isValid = true;
     elements.forEach(e => {
       if (e.value) {
-        // console.log('ERROR: ', e.className)
-        // console.log(/error/gi.test(e.className));
-        // console.log(typeof e.className);
-        // Figure out logic to get rid of error class, below does not work
-          e.className.replace('error', ' ');
+        e.classList.remove('error');
       } else {
         isValid = false;
-        e.className += " error";
+        e.classList.add('error');
       }
     })
 

@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+// Variables
+$font: 'Montserrat', sans-serif;
+$button: rgb(255, 255, 255);
+$button-hover: rgb(245, 245, 245);
+
+@import './Components/LocationAPI/LocationAPI';
+@import './Components/getWeatherLocation/getWeatherLocation';
+@import './Components/TrailsData/TrailsData';
+
+
 body{
   background-color: rgb(225, 225, 225);
 }
