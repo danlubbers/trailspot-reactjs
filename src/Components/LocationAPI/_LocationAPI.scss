@@ -45,6 +45,10 @@
   ::placeholder {
     padding-left: 5px; 
     font-size: 1rem;
+
+    @media screen and (max-width:  $medium) {
+      font-size: .8rem;
+    }
   }
 
   .error {
@@ -75,10 +79,6 @@ form {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    @media screen and (max-width:  $medium) {
-      flex-direction: column;
-    }
   }
 }
 
