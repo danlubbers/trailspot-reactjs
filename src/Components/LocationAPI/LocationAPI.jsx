@@ -143,8 +143,10 @@ export const LocationAPI = () => {
 
       <form action='POST' className='search-container' onSubmit={handleSubmit}>
         <h2>Search for an area by city & state: </h2>
-        <input className='city-search' type="text" placeholder='Ex. Grand Canyon' value={cityInput.value} onBlur={handleCityChange}/>
-        <input className='state-search' type="text" placeholder='Ex. AZ' value={stateInput.value} onBlur={handleStateChange}/>
+        <div className='input-container'>
+          <input className='city-search' type="text" placeholder='Ex. Grand Canyon' value={cityInput.value} onBlur={handleCityChange}/>
+          <input className='state-search' type="text" placeholder='Ex. AZ' value={stateInput.value} onBlur={handleStateChange}/>
+        </div>
         <button type="submit" className='userSearchInput button' value='Search'>Search</button>
       </form>
       

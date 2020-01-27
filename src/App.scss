@@ -5,6 +5,9 @@ $font: 'Montserrat', sans-serif;
 $button: rgb(255, 255, 255);
 $button-hover: rgb(245, 245, 245);
 
+// Media Queries
+$medium: 414px;
+
 @import './Components/LocationAPI/LocationAPI';
 @import './Components/getWeatherLocation/getWeatherLocation';
 @import './Components/TrailsData/TrailsData';
@@ -16,5 +19,15 @@ body{
 
 .App {
   text-align: center;
+
+  header {
+
+    img {
+      @media screen and (max-width:  $medium) {
+        width: 75%;
+
+      }
+    }
+  }
 }
 

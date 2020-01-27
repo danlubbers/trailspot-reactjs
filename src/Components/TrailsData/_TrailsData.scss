@@ -11,6 +11,10 @@
     flex-direction: column;
     align-items: center;
 
+    @media screen and (max-width:  $medium) {
+      width: 350px; 
+    }
+
     .text {
       margin: 5px 0;
       font-family: $font;
@@ -32,6 +36,11 @@
     flex-direction: column;
     align-items: flex-start;
 
+    @media screen and (max-width:  $medium) {
+      width: 100%; 
+      
+    }
+
     h4 {
       margin: 2px;
       font-family: $font;
@@ -50,6 +59,10 @@
     width: 400px; 
     height: 100%; 
     border-radius: 10px;
+
+    @media screen and (max-width:  $medium) {
+      width: 100%; 
+    }
   }
 
   .horizontal-line {

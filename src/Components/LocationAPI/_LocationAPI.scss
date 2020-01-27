@@ -6,16 +6,28 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width:  $medium) {
+    flex-direction: column;
+  }
+
   h2 {
     margin: 0 10px;
     font-family: $font;
     font-size: 1.3em;
+
+    @media screen and (max-width:  $medium) {
+      margin: 10px 0;
+    }
   }
 
   .city-search{
     width: 200px; 
     height: 30px;
     border: none;
+
+    @media screen and (max-width:  $medium) {
+      margin: 10px 5px;
+    }
     
   }
     
@@ -24,6 +36,10 @@
     margin-left: 10px;
     height: 30px;
     border: none; 
+
+    @media screen and (max-width:  $medium) {
+      margin: 10px 5px;
+    }
   }
 
   ::placeholder {
@@ -41,10 +57,28 @@
     border: none;
     border-radius: 10px;
     background-color: $button;
+
+    @media screen and (max-width:  $medium) {
+      margin: 10px 0;
+    }
   }
 
   button:hover {
     background-color: $button-hover;  
+  }
+}
+
+
+form {
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width:  $medium) {
+      flex-direction: column;
+    }
   }
 }
 
