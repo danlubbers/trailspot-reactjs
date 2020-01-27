@@ -72,7 +72,6 @@ export const LocationAPI = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // console.log('FORM: ', e.target.elements)
     const elements = [...e.target.elements].filter(e => {
       return e.matches('input')
     });
