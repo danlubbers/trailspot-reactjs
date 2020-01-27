@@ -7,8 +7,8 @@ A simple app that gets the users location and gives a selection of trails around
 
 ## Setup
 
-1. Clone this repo: `https://github.com/danlubbers/trailSpot`
-2. CD into `trailSpot`
+1. Clone this repo: `https://github.com/danlubbers/trailspot-reactjs`
+2. CD into `trailspot`
 3. `npm install` dependencies 
 
 You will need to get 'three' API keys from the following sites:
