@@ -60,16 +60,16 @@ export const LocationAPI = () => {
   }
   
   // Handling USER INPUTS
-  const handleCityChange = (e) => {
+  const handleCityChange = e => {
     setCityInput(e.target.value)
   }
   
-  const handleStateChange = (e) => {
+  const handleStateChange = e => {
     setStateInput(e.target.value)
   }
 
   //  USER INPUT FORM
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     const elements = [...e.target.elements].filter(e => {
@@ -144,8 +144,8 @@ export const LocationAPI = () => {
       <form action='POST' className='search-container' onSubmit={handleSubmit}>
         <h2>Search for an area by city & state: </h2>
         <div className='input-container'>
-          <input className='city-search' type="text" placeholder='Ex. Grand Canyon' value={cityInput.value} onBlur={handleCityChange} aria-label='city input'/>
-          <input className='state-search' type="text" placeholder='Ex. AZ' value={stateInput.value} onBlur={handleStateChange} aria-label='state input'/>
+          <input className='city-search' type="text" placeholder='Ex. Grand Canyon' aria-label='city input' value={cityInput.value} onBlur={handleCityChange}/>
+          <input className='state-search' type="text" placeholder='Ex. AZ' aria-label='state input' value={stateInput.value} onBlur={handleStateChange}/>
         </div>
         <button type="submit" className='userSearchInput button' value='Search'>Search</button>
       </form>

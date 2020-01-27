@@ -6,7 +6,10 @@ $button: rgb(255, 255, 255);
 $button-hover: rgb(245, 245, 245);
 
 // Media Queries
-$medium: 414px;
+$extra-small: 320px;
+$small: 375px;
+$medium: 768px;
+
 
 @import './Components/LocationAPI/LocationAPI';
 @import './Components/getWeatherLocation/getWeatherLocation';

@@ -9,6 +9,11 @@
   align-content: center;
   border: 1.5px solid #777;
   border-radius: 15px;
+
+  @media screen and (max-width: $extra-small) {
+    width: 300px; 
+    // background-color: red;
+  }
   
   .text {
     font-size: 1.1em;
