@@ -17,12 +17,12 @@
     }
     
     @media screen and (min-width: $small) {
-      width: 350px; 
+      width: 500px; 
       // background-color: blue;
     }
 
     @media screen and (min-width: $medium) {
-      // width: 100%; 
+      width: 800px; 
       // background-color: green;
     }
 
@@ -49,11 +49,16 @@
     align-items: flex-start;
 
     @media screen and (max-width: $extra-small) {
-      width: 80%; 
+      width: 100%; 
     }
     
     @media screen and (min-width: $small) {
       width: 100%; 
+    }
+
+    @media screen and (min-width: $medium) {
+      width: 575px; 
+      // background-color: green;
     }
 
     h4 {
