@@ -24,8 +24,6 @@ export const GetWeatherLocation = ({userWeather, userWeatherMain, weatherIcon}) 
 
   return (
     <div>
-
-     
         <div className='weather-container'>
           <h1 className='text'>Current Weather Conditions</h1>
           <img className='weather-icon' src={icon} alt='weather icon'/>
@@ -41,7 +39,6 @@ export const GetWeatherLocation = ({userWeather, userWeatherMain, weatherIcon}) 
             <button onClick={toggleDegrees}>F / C</button>
           </div>
         </div>
-      
     </div>
   )
 }

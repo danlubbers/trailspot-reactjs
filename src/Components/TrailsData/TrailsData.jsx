@@ -6,10 +6,8 @@ export const TrailsData = ({trailsData}) => {
   return (
     <>
       {trailsData.map((e, i) => {
-
         return (
           <div key={++i} className='trail-results-container'>
-
             <div className='trail-name-location-container'>
               <h2 className='text name'>{e.name}</h2>
               <h3 className='text location'>{e.location}</h3>
@@ -29,7 +27,6 @@ export const TrailsData = ({trailsData}) => {
               </div>
               <div className='horizontal-line'></div>
               </div>
-
           </div>
         )
       })}
