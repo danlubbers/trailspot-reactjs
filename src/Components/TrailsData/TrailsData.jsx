@@ -1,11 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-export const TrailsData = (props) => {
+export const TrailsData = ({trailsData}) => {
 
   return (
     <>
-      {props.trailsData.map((e, i) => {
+      {trailsData.map((e, i) => {
 
         return (
           <div key={++i} className='trail-results-container'>
@@ -37,5 +37,5 @@ export const TrailsData = (props) => {
   )
 }
 TrailsData.propTypes = {
-  trailsData: propTypes.array,
+  trailsData: propTypes.array
 }

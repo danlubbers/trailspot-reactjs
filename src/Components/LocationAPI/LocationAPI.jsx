@@ -109,7 +109,7 @@ export const LocationAPI = () => {
         setIsLoading(true);
         // Resets UserLocation for conditional rendering in className='city-text-location' for displaying correct city and state 
         setUserLocation('');
-      
+        
       } catch(err) {
         setError(err)
         console.log(error)
@@ -118,6 +118,8 @@ export const LocationAPI = () => {
     )();
     // Clears input fields
     e.target.reset();
+    // resets TrailsData so if 0 trails are found will output the correct number of trails
+    setTrailsData([]);
   }
 
   // Clear Results
@@ -157,7 +159,7 @@ export const LocationAPI = () => {
       {isLoading &&
         <div id='location-results-container' className='location-results-container'>
           <div id='area-container' className='area-container'>
-            <h2>We have found trails around the area of:</h2>
+            <h2>We have found {trailsData.length} trails around the area of:</h2>
               <div className="city-state">
                 <h2 className='city-text-location'>{userLocation.city ? userLocation.city : cityInputCaps}</h2> 
                 <h2 className='region-text-location'>{userLocation.region ? userLocation.region : stateInputCaps}</h2>
@@ -169,8 +171,7 @@ export const LocationAPI = () => {
           <TrailsData trailsData={trailsData}/>
         </div>
       }
-
-
+      
     </>
   )
 };
