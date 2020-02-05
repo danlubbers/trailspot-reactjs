@@ -11,7 +11,7 @@ export const GetWeatherLocation = ({userWeather, userWeatherMain, weatherIcon}) 
   const pressureMb = userWeatherMain.pressure; 
   const pressureInches = (userWeatherMain.pressure * 0.0295301).toFixed(2);
   const humidity = userWeatherMain.humidity;
-  const icon = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png` ;
+  const icon = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png` ;
 
 
   function toggleDegrees() {

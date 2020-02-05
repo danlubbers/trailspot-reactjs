@@ -40,7 +40,7 @@ export const LocationAPI = () => {
       setUserLocation(res.data)
       
       // Weather API
-      const weather = await axios.get(`${cors}http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${weatherAPI}`);
+      const weather = await axios.get(`${cors}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${weatherAPI}`);
       setUserWeatherMain(weather.data.main);
       setUserWeather(weather.data.weather[0]);
       setWeatherIcon(weather.data.weather[0].icon);
