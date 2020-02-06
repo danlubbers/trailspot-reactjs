@@ -167,8 +167,11 @@ export const LocationAPI = () => {
           </div> 
 
           <GetWeatherLocation userWeather={userWeather} userWeatherMain={userWeatherMain}  weatherIcon={weatherIcon}/>
-    
-          <TrailsData trailsData={trailsData}/>
+
+          {trailsData.length !== 0 ? 
+            <TrailsData trailsData={trailsData}/> :
+            <h2>No Data</h2>
+          }
         </div>
       }
       
