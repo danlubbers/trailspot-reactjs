@@ -3,6 +3,7 @@ import axios from 'axios';
 import config from '../../config';
 import { GetWeatherLocation } from '../getWeatherLocation/getWeatherLocation';
 import { TrailsData } from '../TrailsData/TrailsData';
+import sunsetOverlook from '../../assets/images/andre-iv-juQpHSfqgRg-unsplash.jpg';
 
 export const LocationAPI = () => {
   const [cityInput, setCityInput] = useState('');
@@ -50,8 +51,8 @@ export const LocationAPI = () => {
       setTrailsData(trailsAPI.data.trails);
 
       setIsLoading(true);
-      setCityInput('');
-      setStateInput('');
+      // setCityInput('');
+      // setStateInput('');
     
     } catch(err) {
       setError(err)
@@ -119,20 +120,19 @@ export const LocationAPI = () => {
     // Clears input fields
     e.target.reset();
     // resets TrailsData so if 0 trails are found will output the correct number of trails
-    setTrailsData([]);
+    // setTrailsData([]);
   }
 
   // Clear Results
   const clearResults = () => {
     setIsLoading(false);
-    setCityInput('')
-    setStateInput('')
+    setCityInput(cityInput)
+    setStateInput(stateInput)
   }
 
   useEffect(() => {
     // console.log(trailsData);
     // console.log(weatherIcon);
-    // console.log(userLocation.city);
   }, [weatherIcon]);
 
 
@@ -170,7 +170,7 @@ export const LocationAPI = () => {
 
           {trailsData.length !== 0 ? 
             <TrailsData trailsData={trailsData}/> :
-            <h2>No Data</h2>
+            <img className='sunset-overlook' src={sunsetOverlook} alt="Sunset Overlook"/>
           }
         </div>
       }
